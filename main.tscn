@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://erntm1eosah3"]
+
+[ext_resource type="Texture2D" uid="uid://bjm2cgolm6dlt" path="res://icon.svg" id="1_flusp"]
+[ext_resource type="Script" path="res://main.gd" id="1_rqfmp"]
+[ext_resource type="PackedScene" uid="uid://btkqthyo11ry0" path="res://hud.tscn" id="3_if01i"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_rqfmp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(239, 194)
+texture = ExtResource("1_flusp")
+
+[node name="Hud" parent="." instance=ExtResource("3_if01i")]
+
+[connection signal="castSpell" from="Hud" to="." method="_on_hud_cast_spell"]
+[connection signal="createSpell" from="Hud" to="." method="_on_hud_create_spell"]

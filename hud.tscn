@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://btkqthyo11ry0"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_5kga5"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_5kga5")
+
+[node name="Properties" type="MenuButton" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Select Property"
+
+[node name="operator" type="MenuButton" parent="."]
+offset_left = 335.0
+offset_top = 6.0
+offset_right = 412.0
+offset_bottom = 37.0
+text = "operator"
+item_count = 2
+popup/item_0/text = "="
+popup/item_1/text = "+="
+popup/item_1/id = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 537.0
+offset_top = 4.0
+offset_right = 604.063
+offset_bottom = 35.0
+text = "Value"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 681.0
+offset_top = 3.0
+offset_right = 782.0
+offset_bottom = 34.0
+text = "Create Spell"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 855.0
+offset_top = 6.0
+offset_right = 938.0
+offset_bottom = 37.0
+text = "Cast Spell"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
